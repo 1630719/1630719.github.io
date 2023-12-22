@@ -18,7 +18,7 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="afficherToRecettes(), CreerRecettes">
     <!-- Row de texte au haut de la page -->
     <div class="bg-light fw-semibold row mb-3">
         <p class="ms-2 pt-2"> Répertoire de recettes communautaires</p>
@@ -88,26 +88,8 @@
             </div>
 
             <!-- Affichage des recettes -->
-            <div class="col col-md-6  mt-3 ps-4" id="CarteRecette">
+            <div class="col col-md-6  mt-3 ps-4" id="RecetteCarte">
                 <h3 class="h3 fw-semibold"> Recettes </h3>
-                <div class="border border-1 rounded ps-2">
-                    <h5 class="h5 fw-semibold" id="NomRecetteCarte"> Nom de la recette </h5> <!-- Dynamiquement changer le numero de la recette -->
-
-                    <!-- Titre ingrédients -->
-                    <p class="text-muted fw-semibold">Ingrédients : </p>
-
-                    <!-- Liste des ingrédients -->
-                    <ul id="ListeRecetteCarte">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-
-                    <!-- Instructions -->
-                    <p id="InstructionsCarte"> Instructions : </p>
-
-                    <!-- Bouton supprimer -->
-                    <input class="btn btn-danger mb-3 offset-10" type="button" value="Supprimer" id="BoutonSupprimerRecette">
 
                 </div>
             </div>
