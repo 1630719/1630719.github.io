@@ -16,6 +16,7 @@
     <script src="bootstrap-5.2.3-dist/js/bootstrap.esm.js"></script>
     <script src="bootstrap-5.2.3-dist/js/bootstrap.js"></script>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Row de texte au haut de la page -->
@@ -29,36 +30,46 @@
             <!-- Formulaire ajout de recette -->
             <div class="col col-md-6 mt-3">
                 <h3 class="h3 fw-semibold">Ajouter une recette</h3>
+                <form id="Form" onsubmit="event.preventDefault()">
 
                 <!-- Nom de la recette -->
                 <div>
                     <label for="NomRecette" class="form-label"> Nom de la recette </label>
-                    <input type="text" required placeholder="Soupe au poulet" max="40" name="NomRecette" id="NomRecette"
-                    class="form-control text-black mb-3">
+                    <input type="text" required placeholder="Soupe au poulet" max="30" name="NomRecette" id="NomRecette"
+                    class="form-control text-black mb-3" pattern="^[a-zA-Z\s]{3,30}$">
+                    <p id="ErreurNom" class="text-danger LabelErreur"></p>
                 </div>
                 <!-- Ingrédients -->
                 <label for="Ingredients" class="form-label"> Ingrédients</label>
 
                 <!-- Pour placer ingrédients et quantité sur la même ligne mais 2 rangées différentes -->
+                <!-- 3 ingrédients et quantités required, le reste optionel -->
                 <div class="row">
                     <div class="col-md-6">
-                        <input type="text" required placeholder="Ingredient 1" max="30" name="Ingredients" id="Ingredients"
-                        class="form-control col mb-2">
-                        <input type="text" required placeholder="Ingredient 2" max="30" name="Ingredients2" id="Ingredients2"
-                               class="form-control col mb-2">
-                        <input type="text" required placeholder="Ingredient 3" max="30" name="Ingredients3" id="Ingredients3"
-                               class="form-control col mb-2">
-                        <input type="text" required placeholder="Ingredient 4" max="30" name="Ingredients4" id="Ingredients4"
-                               class="form-control col mb-2">
-                        <input type="text" required placeholder="Ingredient 5" max="30" name="Ingredients5" id="Ingredients5"
-                               class="form-control col mb-2">
+                        <input type="text" required placeholder="Ingredient 1" max="25" name="Ingredients" id="Ingredients"
+                        class="form-control col mb-2" pattern="^[a-zA-Z\s]{3,25}$">
+                        <p id="ErreurIngredient1" class="LabelErreur text-danger"></p>
+
+                        <input type="text" required placeholder="Ingredient 2" max="25" name="Ingredients2" id="Ingredients2"
+                               class="form-control col mb-2" pattern="^[a-zA-Z\s]{3,25}$">
+                        <p id="ErreurIngredient2" class="LabelErreur text-danger"></p>
+
+                        <input type="text" required placeholder="Ingredient 3" max="25" name="Ingredients3" id="Ingredients3"
+                               class="form-control col mb-2" pattern="^[a-zA-Z\s]{3,25}$">
+                        <p id="ErreurIngredient3" class="LabelErreur text-danger"></p>
+
+                        <input type="text"  placeholder="Ingredient 4" max="25" name="Ingredients4" id="Ingredients4"
+                               class="form-control col mb-2" pattern="^[a-zA-Z\s]{3,25}$">
+                        <p></p>
+                        <input type="text"  placeholder="Ingredient 5" max="25" name="Ingredients5" id="Ingredients5"
+                               class="form-control col mb-2" pattern="^[a-zA-Z\s]{3,25}$">
                     </div>
                     <div class="col-md-6">
-                        <input type="number" required placeholder="Quantité 1" class="form-control col mb-2" min="0" name="Quantite" id="Quantite">
-                        <input type="number" required placeholder="Quantité 2" class="form-control col mb-2" min="0" name="Quantite2" id="Quantite2">
-                        <input type="number" required placeholder="Quantité 3" class="form-control col mb-2" min="0" name="Quantite3" id="Quantite3">
-                        <input type="number" required placeholder="Quantité 4" class="form-control col mb-2" min="0" name="Quantite4" id="Quantite4">
-                        <input type="number" required placeholder="Quantité 5" class="form-control col mb-3" min="0" name="Quantite5" id="Quantite5">
+                        <input type="number" required placeholder="Quantité 1" class="form-control col mb-3" min="0" name="Quantite" id="Quantite">
+                        <input type="number" required placeholder="Quantité 2" class="form-control col mb-3" min="0" name="Quantite2" id="Quantite2">
+                        <input type="number" required placeholder="Quantité 3" class="form-control col mb-3" min="0" name="Quantite3" id="Quantite3">
+                        <input type="number"  placeholder="Quantité 4" class="form-control col mb-3" min="0" name="Quantite4" id="Quantite4">
+                        <input type="number"  placeholder="Quantité 5" class="form-control col mb-3" min="0" name="Quantite5" id="Quantite5">
                     </div>
                 </div>
 
@@ -73,7 +84,7 @@
                     <input class="btn btn-primary" type="submit" value="Ajouter la recette" id="BoutonEnvoyer">
                 </div>
 
-
+                </form>
             </div>
 
             <!-- Affichage des recettes -->
