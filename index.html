@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Création de recettes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-grid.rtl.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-reboot.rtl.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap-utilities.rtl.css">
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.esm.js"></script>
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Row de texte au haut de la page -->
+    <div class="bg-light fw-semibold row mb-3">
+        <p class="ms-2 pt-2"> Répertoire de recettes communautaires</p>
+    </div>
+    <!-- Formulaire et affichage des recettes -->
+    <div class="container">
+        <div class="row">
+
+            <!-- Formulaire ajout de recette -->
+            <div class="col col-md-6 mt-3">
+                <h3 class="h3 fw-semibold">Ajouter une recette</h3>
+
+                <!-- Nom de la recette -->
+                <div>
+                    <label for="NomRecette" class="form-label"> Nom de la recette </label>
+                    <input type="text" required placeholder="Soupe au poulet" max="40" name="NomRecette" id="NomRecette"
+                    class="form-control text-black mb-3">
+                </div>
+                <!-- Ingrédients -->
+                <label for="Ingredients" class="form-label"> Ingrédients</label>
+
+                <!-- Pour placer ingrédients et quantité sur la même ligne mais 2 rangées différentes -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" required placeholder="Ingredient 1" max="30" name="Ingredients" id="Ingredients"
+                        class="form-control col mb-2">
+                        <input type="text" required placeholder="Ingredient 2" max="30" name="Ingredients2" id="Ingredients2"
+                               class="form-control col mb-2">
+                        <input type="text" required placeholder="Ingredient 3" max="30" name="Ingredients3" id="Ingredients3"
+                               class="form-control col mb-2">
+                        <input type="text" required placeholder="Ingredient 4" max="30" name="Ingredients4" id="Ingredients4"
+                               class="form-control col mb-2">
+                        <input type="text" required placeholder="Ingredient 5" max="30" name="Ingredients5" id="Ingredients5"
+                               class="form-control col mb-2">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" required placeholder="Quantité 1" class="form-control col mb-2" min="0" name="Quantite" id="Quantite">
+                        <input type="number" required placeholder="Quantité 2" class="form-control col mb-2" min="0" name="Quantite2" id="Quantite2">
+                        <input type="number" required placeholder="Quantité 3" class="form-control col mb-2" min="0" name="Quantite3" id="Quantite3">
+                        <input type="number" required placeholder="Quantité 4" class="form-control col mb-2" min="0" name="Quantite4" id="Quantite4">
+                        <input type="number" required placeholder="Quantité 5" class="form-control col mb-3" min="0" name="Quantite5" id="Quantite5">
+                    </div>
+                </div>
+
+                <!-- Instructions -->
+                <div>
+                    <label for="InstructionsRecette" class="form-label mt-3"> Instructions </label>
+                    <textarea class="form-control mb-3" id="InstructionsRecette" rows="5"></textarea>
+                </div>
+
+                <!-- Bouton pour ajouter la recette -->
+                <div>
+                    <input class="btn btn-primary" type="submit" value="Ajouter la recette" id="BoutonEnvoyer">
+                </div>
+
+
+            </div>
+
+            <!-- Affichage des recettes -->
+            <div class="col col-md-6  mt-3 ps-4" id="CarteRecette">
+                <h3 class="h3 fw-semibold"> Recettes </h3>
+                <div class="border border-1 rounded ps-2">
+                    <h5 class="h5 fw-semibold" id="NomRecetteCarte"> Nom de la recette </h5> <!-- Dynamiquement changer le numero de la recette -->
+
+                    <!-- Titre ingrédients -->
+                    <p class="text-muted fw-semibold">Ingrédients : </p>
+
+                    <!-- Liste des ingrédients -->
+                    <ul id="ListeRecetteCarte">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+
+                    <!-- Instructions -->
+                    <p id="InstructionsCarte"> Instructions : </p>
+
+                    <!-- Bouton supprimer -->
+                    <input class="btn btn-danger mb-3 offset-10" type="button" value="Supprimer" id="BoutonSupprimerRecette">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
